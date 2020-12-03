@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+   <body background="/static/images/a-plane-taking-off-pictures.jpg"> 
+ 
+      <div class=container>
+         <center>
+            <h1 style="background-color: black;color: white;">KAZANDIĞINIZ BONUSLAR</h1><br><br>
+           <table class="table table-hover" style="background-color:powderblue;"> 
+           <thead style="color:red;font-weight: 600;font-size: 22px;">
+
+            <td> <button class="btn"style="background-color:black;color:white">USER ID</button></td>
+            <td> <button class="btn"style="background-color:black;color:white">KULLANICI ADI</button></td>
+            <td> <button class="btn"style="background-color:black;color:white">KULLANICI SOYADI</button></td>
+            <td> <button class="btn"style="background-color:black;color:white">BONUS</button></td>
+  
+             
+               
+           </thead>
+          
+             <tbody>
+           
+            
+         
+        
+         {% for row in rows %}
+            <tr style="font-weight: bold;">
+               <td>{{row["users_id"]}}</td>
+          
+               <td>{{row["name"]}}</td>
+               <td>{{row["last_name"]}}</td>
+               <td>{{row["bonus"]}}</td>
+
+              
+               
+            
+               
+
+            </tr>
+         {% endfor %}
+      
+         </tbody>
+        </table>
+      <br><br><br>
+      <button type="button" class="btn btn-dark" style="background-color:black"><a href = "/"style="font-weight:bold;color:white">Ana Sayfaya Dön</a></button>
+
+ 
+      <button type="button" class="btn btn-dark" style="background-color:black"><a href="/rezervasyon_listele" style="font-weight:bold;color:white">Yeni Bilet Oluşturma İşlemi İçin Tıklayınız</a></button>
+
+
+   </center>
+</div>
+<style>
+a
+{
+    font-size: 18px;
+    text-decoration: none;
+}
+a:hover
+{
+    color: red;
+    text-decoration: none;
+    
+}
+</style>
+     
+
+   </body>
+</html>

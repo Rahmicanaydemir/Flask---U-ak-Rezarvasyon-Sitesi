@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+   <body background="/static/images/a-plane-taking-off-pictures.jpg"> 
+      <div class=container>
+         <center>
+             <h1 style="background-color: black;color: white;">UÇAKLARIN DOLULUK LİSTESİ</h1><br><br>
+           <table class="table table-hover"style="background-color:powderblue;">
+           <thead style="color:red;font-weight: 600;font-size: 22px;">
+               <td><button class="btn"style="background-color:black;color:white">UÇUŞ ID</button></td>
+               <td><button class="btn"style="background-color:black;color:white">Kapasite</button></td>
+               <td><button class="btn"style="background-color:black;color:white">Boş Koltuk</button> </td>
+               <td><button class="btn"style="background-color:black;color:white">Dolu Koltuk</button></td>
+               <td><button class="btn"style="background-color:black;color:white">Oran(%)</button></td> 
+              
+             
+               
+           </thead>
+          
+             <tbody>
+           
+            
+         
+        
+         {% for row in rows %}
+            <tr style="font-weight: bold;">
+               <td>{{row["ucus_id"]}}</td>  
+               <td>{{row["capacity"]}}</td>  
+               <td>{{row["empty_seat"]}}</td>
+               <td>{{row["full_seat"]}}</td>
+               <td>{{row["oran"]}}</td>
+               <td><button class="btn"style="background-color:black;color:white"><a href="{{ url_for('doluluksil',capacity=row['capacity']) }}" style="color:white">SİL</a></button></td>
+               
+            
+         
+            </tr>
+            
+         {% endfor %}
+      
+         </tbody>
+        </table>
+      <br>
+      <button type="button" class="btn btn-dark" style="background-color:black"><a href = "/"style="font-weight:bold;color:white">Ana Sayfaya Dön</a></button>
+     
+
+
+   </center>
+</div>
+<style>
+a
+{
+    font-size: 18px;
+    text-decoration: none;
+}
+a:hover
+{
+    color: red;
+    text-decoration: none;
+    
+}
+</style>
+     
+
+   </body>
+</html>

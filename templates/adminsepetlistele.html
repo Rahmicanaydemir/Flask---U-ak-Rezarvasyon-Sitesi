@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+   <body background="/static/images/a-plane-taking-off-pictures.jpg"> 
+      <div class=container>
+         <center><br><br>
+            <h1 style="background-color: black;color: white;">TÜM UÇUŞLAR</h1><BR>
+           <table class="table table-hover"style="background-color:powderblue;">
+           <thead style="color:red;font-weight: 600;font-size: 22px;">
+               <td><button class="btn"style="background-color:black;color:white">USER ID</button></td>
+               <td><button class="btn"style="background-color:black;color:white">UÇUŞ ID</button></td>
+               <td><button class="btn"style="background-color:black;color:white">NAME</button></td>
+               <td><button class="btn"style="background-color:black;color:white">LAST NAME</button></td>
+               <td><button class="btn"style="background-color:black;color:white">PHONE</button></td>
+               <td><button class="btn"style="background-color:black;color:white">NUMBER</button></td>
+              
+             
+               
+           </thead>
+          
+             <tbody>
+           
+            
+         
+        
+         {% for row in rows %}
+            <tr style="font-weight: bold;">
+               <td>{{row["users_id"]}}</td>
+               <td>{{row["ucus_id"]}}</td>
+               <td>{{row["name"]}}</td>
+               <td>{{row["last_name"]}}</td>
+               <td>{{row["phone"]}}</td>
+               <td>{{row["number"]}}</td>
+               
+            
+               <td><button class="btn"style="background-color:black;color:white"><a href="{{ url_for('sepettensil',ucus_id=row['ucus_id']) }}" style="color:white">SİL</a></button></td>
+            </tr>
+         {% endfor %}
+      
+         </tbody>
+        </table>
+      <br>
+      <button type="button" class="btn btn-dark" style="background-color:black"><a href = "/"style="font-weight:bold;color:white">Ana Sayfaya Dön</a></button>
+     
+
+
+   </center>
+</div>
+<style>
+a
+{
+    font-size: 18px;
+    text-decoration: none;
+}
+a:hover
+{
+    color: red;
+    text-decoration: none;
+    
+}
+</style>
+     
+
+   </body>
+</html>

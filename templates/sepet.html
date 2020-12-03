@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+<center>
+    <form action ="{{ url_for('sepet_ekle') }}", method='POST'>
+<br>
+       
+            <h1 style="color:palegreen"><i class="fa fa-shopping-cart" style="font-size:48px;color:red"></i>SEPETE EKLE<i class="fa fa-shopping-cart" style="font-size:48px;color:red"></i></h3>
+            <br>
+            <h3>ID:&nbsp;&nbsp;&nbsp;<input type="text" name="ucus_id"></h3>
+            <h3>KULLANICI ADI:&nbsp;&nbsp;&nbsp;<input type="text" name="name"></h3>
+            <br>
+                <h3>KULLANICI SOYADI:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="last_name"></h3>
+            <br>
+            
+            <h3 style="margin-left: -5px">PHONE:&nbsp;&nbsp;&nbsp;<input type="text" name="phone"></h3>
+                <br>
+            
+            
+            
+            <h3>NUMBER:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="number"></h3>
+            <br>
+            <input type="submit" value="GONDER">
+                
+    </form>
+</center>
+</body>
+</html>

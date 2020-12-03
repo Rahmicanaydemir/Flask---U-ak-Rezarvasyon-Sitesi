@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+   <body background="/static/images/a-plane-taking-off-pictures.jpg"> 
+      <div class=container-fluid>
+         <center>
+             <h1 style="background-color: black;color: white;">UÇAK LİSTELERİ AŞAĞIDA VERİLMİŞTİR</h1><br><br>
+           <table class="table table-hover"style="background-color:powderblue;font-weight: bold;">
+           <thead style="color:red;font-weight: 600;font-size: 22px;">
+
+            
+               <td><button class="btn btn-dark" style="background-color: black;color: white;">UÇUŞ ID</button></td>
+               <td><button class="btn btn-dark" style="background-color: black;color: white;">Departure</button></td>
+               <td><button class="btn btn-dark" style="background-color: black;color: white;">Landing</button></td>
+               <td><button class="btn btn-dark" style="background-color: black;color: white;">Empty Seat</button></td>
+               <td><button class="btn btn-dark" style="background-color: black;color: white;">Full Seat</button></td>
+               <td><button class="btn btn-dark" style="background-color: black;color: white;">Capacity</button></td>
+               <td><button class="btn btn-dark" style="background-color: black;color: white;">Pilot Name</button></td>
+               <td><button class="btn btn-dark" style="background-color: black;color: white;">Fare</button></td>
+               <td><button class="btn btn-dark" style="background-color: black;color: white;">Wage Received</button></td>
+           </thead>
+          
+             <tbody>
+           
+            
+         
+
+         {% for row in rows %}
+       
+            <tr>
+               <td>{{row["ucus_id"]}}</td>
+               <td>{{row["departure"]}}</td>
+               <td>{{row["landing"]}}</td>
+               <td>{{row["empty_seat"]}}</td>
+               <td>{{row["full_seat"]}}</td>
+               <td>{{row["capacity"]}}</td>
+               <td>{{row["pilot_name"]}}</td>
+               <td>{{row["ticket"]}}</td>
+               <td>{{row["bonus"]}}</td>
+               <td><button  class="btn" style="background-color: black;"><a href="{{ url_for('rezsill',ucus_id=row['ucus_id']) }}" style="color:white">SİL</a></button></td>
+           <td> <button  class="btn" style="background-color: black;"><a style="color:white"href="{{ url_for('rezguncelle',ucus_id=row['ucus_id']) }}">GÜNCELLE</a></button></td>
+               {{ms}}
+            </tr>
+           
+         {% endfor %}
+         </tbody>
+        </table>
+        
+      <br>
+      <a href = "/"style="font-weight:bold;font-size:30px;color:black">ANA SAYFAYA DÖN</a><br>
+      <div class="alert {{alert}}" role="alert">
+        {{msg}}
+        </div>
+     <h1 style="color:white;text-shadow: 1px 1px 2px black;"> BİLET ALMA</h3><hr><br>
+        <form action ="{{ url_for('sepet_ekle') }}", method='POST'>
+        <div class="container-fluid"
+            <div class="row">
+                    <div class="col-md-6">
+                    
+              
+                    <h3 style="margin-left: 5px;color:white ;font-weight: bold;">UÇUŞ ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="ucus_id"></h3><br>
+                    <h3 style="color:white;font-weight: bold;">KULLANICI ADI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name"></h3>
+                    <br>
+                        <h3 style="color:white;font-weight: bold;">KULLANICI SOYADI&nbsp;&nbsp;<input type="text" name="last_name"></h3>
+                    <br>
+            </div>
+        <div class="col-md-6">
+
+        <h3 style="margin-left: -5px;color:white;font-weight: bold;">İLETİŞİM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="phone"></h3>
+       <br>
+
+
+
+        <h3 style="margin-left: -2px;color:white;font-weight: bold;">ADET&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="number"></h3>
+        <br>
+        <h3 style="margin-left: -2px;color:white;font-weight: bold;">ÜCRET &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="ticket"></h3>
+        <br><br>
+        
+      
+    
+        </div>
+        <button class="btn"type="submit" value="GONDER" style="width: 80%;height: 50px;color:white;background-color: black;"> SEPETE GÖNDER</button><br><br>
+    </div>
+</div>
+         
+                 
+                 
+         </form>
+  
+
+
+</div>
+<style>
+a
+{
+    
+    font-size: 18px;
+    text-decoration: none;
+}
+a:hover
+{
+    color: red;
+    text-decoration: none;
+    
+}
+
+
+</style>
+     
+
+   </body>
+</html>

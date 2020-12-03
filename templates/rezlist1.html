@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+  
+   <body background="/static/images/a-plane-taking-off-pictures.jpg"> 
+      <div class=container >
+         <center>
+            <br><br>
+         
+             <h1 style="background-color: black;color:white;" >UÇAK LİSTELERİ AŞAĞIDA VERİLMİŞTİR</h1><br><br>
+           <table class="table table-hover"style="background-color:powderblue;">
+           <thead style="color:red;font-weight: 600;font-size: 22px;">
+
+            
+               <td> <button class="btn"style="background-color:black;color:white">FLIGHT ID</button></td>
+               <td> <button class="btn"style="background-color:black;color:white">Departure</button></td>
+               <td> <button class="btn"style="background-color:black;color:white">Landing</button></td>
+               <td> <button class="btn"style="background-color:black;color:white">Empty Seat</button></td>
+               <td> <button class="btn"style="background-color:black;color:white">Full Seat</button></td>
+               <td> <button class="btn"style="background-color:black;color:white">Capacity</button></td>
+               <td> <button class="btn"style="background-color:black;color:white">Pilot Name</button></td>
+               
+           </thead>
+          
+             <tbody>
+           
+            
+         
+        
+         {% for row in rows %}
+            <tr style="font-weight: bold;">
+               <td>{{row["ucus_id"]}}</td>
+               <td>{{row["departure"]}}</td>
+               <td>{{row["landing"]}}</td>
+               <td>{{row["empty_seat"]}}</td>
+               <td>{{row["full_seat"]}}</td>
+               <td>{{row["capacity"]}}</td>
+               <td>{{row["pilot_name"]}}</td>
+               
+             
+               
+            </tr>
+         
+            {% endfor %}
+         </tbody>
+     
+        </table>
+     
+      
+     
+      <br>
